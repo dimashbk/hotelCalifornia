@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D5FE2242AAF17FB00012109 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 1D5FE2232AAF17FB00012109 /* DesignSystem */; };
+		1D8B116F2AAF203D007FE9A0 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8B116E2AAF203D007FE9A0 /* DesignSystem */; };
 		1D9AD4402AAB1D0800A4481E /* DynamicScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AD43F2AAB1D0800A4481E /* DynamicScrollView.swift */; };
 		1D9AD4422AAB1D6900A4481E /* HotelMainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AD4412AAB1D6900A4481E /* HotelMainInfo.swift */; };
 		1D9AD4462AAB201800A4481E /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AD4452AAB201800A4481E /* UIViewController + Extension.swift */; };
@@ -21,8 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D5FE2212AAF17E100012109 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DesignSystem; sourceTree = "<group>"; };
-		1D5FE2252AAF187E00012109 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DesignSystem; sourceTree = "<group>"; };
 		1D9AD43F2AAB1D0800A4481E /* DynamicScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicScrollView.swift; sourceTree = "<group>"; };
 		1D9AD4412AAB1D6900A4481E /* HotelMainInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelMainInfo.swift; sourceTree = "<group>"; };
 		1D9AD4452AAB201800A4481E /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
@@ -42,21 +40,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DF002982AAB245D00A31A1A /* SnapKit in Frameworks */,
-				1D5FE2242AAF17FB00012109 /* DesignSystem in Frameworks */,
+				1D8B116F2AAF203D007FE9A0 /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D5FE2202AAF17E100012109 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				1D5FE2212AAF17E100012109 /* DesignSystem */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		1D5FE2222AAF17FB00012109 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +84,6 @@
 		1DCE8E972AAB0CAD00CD5D6E = {
 			isa = PBXGroup;
 			children = (
-				1D5FE2252AAF187E00012109 /* DesignSystem */,
-				1D5FE2202AAF17E100012109 /* Packages */,
 				1DCE8EA22AAB0CAD00CD5D6E /* hotelCalifornia */,
 				1DCE8EA12AAB0CAD00CD5D6E /* Products */,
 				1D5FE2222AAF17FB00012109 /* Frameworks */,
@@ -182,7 +170,7 @@
 			name = hotelCalifornia;
 			packageProductDependencies = (
 				1DF002972AAB245D00A31A1A /* SnapKit */,
-				1D5FE2232AAF17FB00012109 /* DesignSystem */,
+				1D8B116E2AAF203D007FE9A0 /* DesignSystem */,
 			);
 			productName = hotelCalifornia;
 			productReference = 1DCE8EA02AAB0CAD00CD5D6E /* hotelCalifornia.app */;
@@ -468,7 +456,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1D5FE2232AAF17FB00012109 /* DesignSystem */ = {
+		1D8B116E2AAF203D007FE9A0 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DesignSystem;
 		};

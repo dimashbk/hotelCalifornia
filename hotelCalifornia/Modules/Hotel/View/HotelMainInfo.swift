@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import DesignSystem
 
 final class HotelMainInfo: UIView {
     
@@ -31,6 +32,8 @@ final class HotelMainInfo: UIView {
         return pageControl
     }()
     
+    private var ratingView = HotelRatingView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         imagesCollectionView.delegate = self
@@ -49,7 +52,7 @@ final class HotelMainInfo: UIView {
     }
     
     private func setupSubviews() {
-        [imagesCollectionView].forEach {
+        [imagesCollectionView, ratingView].forEach {
             addSubview($0)
         }
         imagesCollectionView.addSubview(pageControl)
