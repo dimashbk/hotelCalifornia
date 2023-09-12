@@ -6,15 +6,29 @@
 //
 
 import UIKit
+import DesignSystem
 
 final class HotelViewController: UIViewController {
     
     let mainInfo = HotelMainInfo()
+    let additionalInfo = HotelAdditionalInfo()
+    
+    lazy var contentView: UIStackView = {
+        let view = UIStackView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.addArrangedSubview(mainInfo)
+        view.addArrangedSubview(additionalInfo)
+        view.axis = .vertical
+        view.spacing = 8
+        return view
+    }()
+    
+    lazy var scrollView = DynamicHeightScrollView( contentView: contentView )
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        view.backgroundColor = .red
+        view.backgroundColor = Color.ratingBackgroundOrange
     }
     
     private func setup() {
@@ -23,15 +37,14 @@ final class HotelViewController: UIViewController {
     }
     
     private func setupSubviews() {
-        [mainInfo].forEach {
+        [scrollView].forEach {
             view.addSubview($0)
         }
     }
     
     private func setupConstraints() {
-        mainInfo.snp.makeConstraints { make in
-            make.left.right.equalToSuperview()
-            make.center.equalToSuperview()
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
     }
 }
