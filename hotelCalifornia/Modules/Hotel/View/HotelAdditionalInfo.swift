@@ -7,9 +7,9 @@
 
 import UIKit
 import SnapKit
-import TTGTags
+import DesignSystem
 
-final class HotelAdditionalInfo: UIView , TTGTextTagCollectionViewDelegate{
+final class HotelAdditionalInfo: UIView {
 
     private var titleLabel: UILabel = {
         let label = UILabel()
@@ -17,22 +17,17 @@ final class HotelAdditionalInfo: UIView , TTGTextTagCollectionViewDelegate{
         label.font = UIFont.systemFont(ofSize: 22, weight: .medium)
         return label
     }()
+     
+    var tags = ["Бесплатный Wifi на всей территории отеля",
+                "1 км до пляжа",
+                "Бесплатный фитнес-клуб",
+                "20 км до аэропорта"]
     
-    let tagView = TTGTextTagCollectionView()
+    private let tagView: TagCollectionView = TagCollectionView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
-        
-        let textTag = TTGTextTag(content: TTGTextTagStringContent(text: "tutuge"), style: TTGTextTagStyle())
-        let textTag2 = TTGTextTag(content: TTGTextTagStringContent(text: "tutuge"), style: TTGTextTagStyle())
-        let textTag3 = TTGTextTag(content: TTGTextTagStringContent(text: "tutuge"), style: TTGTextTagStyle())
-        let textTag4 = TTGTextTag(content: TTGTextTagStringContent(text: "tutuge"), style: TTGTextTagStyle())
-        tagView.addTag(textTag)
-        tagView.addTag(textTag2)
-        tagView.addTag(textTag3)
-        tagView.addTag(textTag4)
-        tagView.reload()
     }
     
     required init?(coder: NSCoder) {
@@ -40,8 +35,8 @@ final class HotelAdditionalInfo: UIView , TTGTextTagCollectionViewDelegate{
     }
     
     private func setup() {
-        tagView.delegate = self
         backgroundColor = .white
+        tagView.dataSource = self
         setupSubviews()
         setupConstraints()
     }
@@ -62,7 +57,19 @@ final class HotelAdditionalInfo: UIView , TTGTextTagCollectionViewDelegate{
         tagView.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(16)
             make.top.equalTo(titleLabel.snp.bottom).offset(16)
-            make.height.equalTo(80)
         }
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+extension HotelAdditionalInfo: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        tags.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TagCollectionViewCell.className, for: indexPath) as? TagCollectionViewCell else { return UICollectionViewCell() }
+        cell.configure(name: tags[indexPath.row])
+        return cell
     }
 }

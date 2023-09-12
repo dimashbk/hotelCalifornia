@@ -12,6 +12,7 @@ final class HotelViewController: UIViewController {
     
     let mainInfo = HotelMainInfo()
     let additionalInfo = HotelAdditionalInfo()
+    lazy var scrollView = DynamicHeightScrollView(contentView: contentView)
     
     lazy var contentView: UIStackView = {
         let view = UIStackView()
@@ -22,8 +23,6 @@ final class HotelViewController: UIViewController {
         view.spacing = 8
         return view
     }()
-    
-    lazy var scrollView = DynamicHeightScrollView( contentView: contentView )
 
     override func viewDidLoad() {
         super.viewDidLoad()

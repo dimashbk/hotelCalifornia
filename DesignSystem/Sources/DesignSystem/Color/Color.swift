@@ -14,6 +14,11 @@ public struct Color {
     public static let ratingBackgroundOrange: UIColor = UIColor(hex: "#FFC70033")
     
     public static let mainBlue: UIColor = UIColor(hex: "#0D72FF")
+    
+    public static let tagBackgroundGray: UIColor = UIColor(hex: "#FBFBFC")
+    
+    public static let tagBackgroundText: UIColor = UIColor(hex: "#828796")
+    
 }
 
 extension UIColor {

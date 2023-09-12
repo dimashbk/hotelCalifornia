@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1D8B116F2AAF203D007FE9A0 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8B116E2AAF203D007FE9A0 /* DesignSystem */; };
 		1D8B11712AAF4CD9007FE9A0 /* HotelAdditionalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8B11702AAF4CD9007FE9A0 /* HotelAdditionalInfo.swift */; };
-		1D8B11742AAF524E007FE9A0 /* TTGTags in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8B11732AAF524E007FE9A0 /* TTGTags */; };
 		1D9AD4402AAB1D0800A4481E /* DynamicScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AD43F2AAB1D0800A4481E /* DynamicScrollView.swift */; };
 		1D9AD4422AAB1D6900A4481E /* HotelMainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AD4412AAB1D6900A4481E /* HotelMainInfo.swift */; };
 		1D9AD4462AAB201800A4481E /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AD4452AAB201800A4481E /* UIViewController + Extension.swift */; };
@@ -42,7 +41,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D8B11742AAF524E007FE9A0 /* TTGTags in Frameworks */,
 				1DF002982AAB245D00A31A1A /* SnapKit in Frameworks */,
 				1D8B116F2AAF203D007FE9A0 /* DesignSystem in Frameworks */,
 			);
@@ -176,7 +174,6 @@
 			packageProductDependencies = (
 				1DF002972AAB245D00A31A1A /* SnapKit */,
 				1D8B116E2AAF203D007FE9A0 /* DesignSystem */,
-				1D8B11732AAF524E007FE9A0 /* TTGTags */,
 			);
 			productName = hotelCalifornia;
 			productReference = 1DCE8EA02AAB0CAD00CD5D6E /* hotelCalifornia.app */;
@@ -208,7 +205,6 @@
 			mainGroup = 1DCE8E972AAB0CAD00CD5D6E;
 			packageReferences = (
 				1DF002962AAB245D00A31A1A /* XCRemoteSwiftPackageReference "SnapKit" */,
-				1D8B11722AAF524E007FE9A0 /* XCRemoteSwiftPackageReference "TTGTagCollectionView" */,
 			);
 			productRefGroup = 1DCE8EA12AAB0CAD00CD5D6E /* Products */;
 			projectDirPath = "";
@@ -453,14 +449,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1D8B11722AAF524E007FE9A0 /* XCRemoteSwiftPackageReference "TTGTagCollectionView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/zekunyan/TTGTagCollectionView";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 		1DF002962AAB245D00A31A1A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -475,11 +463,6 @@
 		1D8B116E2AAF203D007FE9A0 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DesignSystem;
-		};
-		1D8B11732AAF524E007FE9A0 /* TTGTags */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1D8B11722AAF524E007FE9A0 /* XCRemoteSwiftPackageReference "TTGTagCollectionView" */;
-			productName = TTGTags;
 		};
 		1DF002972AAB245D00A31A1A /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
