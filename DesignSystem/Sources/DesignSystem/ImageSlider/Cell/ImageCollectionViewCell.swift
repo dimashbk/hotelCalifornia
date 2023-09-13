@@ -38,4 +38,9 @@ final class ImageCollectionViewCell: UICollectionViewCell {
             make.edges.equalToSuperview()
         }
     }
+    
+    public func configure(image: UIImage) {
+        hotelImageView.image = image
+    }
+
 }

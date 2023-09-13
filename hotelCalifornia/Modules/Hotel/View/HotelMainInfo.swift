@@ -11,7 +11,7 @@ import DesignSystem
 
 final class HotelMainInfo: UIView {
     
-    private var imageSlider = ImageSlider()
+    var imageSlider = ImageSlider()
     private var ratingView = HotelRatingView()
     
     private var hotelName: UILabel = {

@@ -12,6 +12,11 @@
 		1D910DC52AB18114001EF789 /* AboutHotelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D910DC42AB18114001EF789 /* AboutHotelTableViewCell.swift */; };
 		1D910DC82AB182C5001EF789 /* AboutHotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D910DC72AB182C5001EF789 /* AboutHotelModel.swift */; };
 		1D910DCA2AB18844001EF789 /* HotelButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D910DC92AB18844001EF789 /* HotelButtonView.swift */; };
+		1D910DCD2AB24434001EF789 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D910DCC2AB24434001EF789 /* NetworkService.swift */; };
+		1D910DCF2AB2447C001EF789 /* HotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D910DCE2AB2447C001EF789 /* HotelModel.swift */; };
+		1D910DD22AB244D6001EF789 /* HotelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D910DD12AB244D6001EF789 /* HotelViewModel.swift */; };
+		1D910DD62AB248D5001EF789 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D910DD52AB248D5001EF789 /* UIImageView + Extension.swift */; };
+		1D910DD92AB248EB001EF789 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1D910DD82AB248EB001EF789 /* Kingfisher */; };
 		1D9AD4402AAB1D0800A4481E /* DynamicScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AD43F2AAB1D0800A4481E /* DynamicScrollView.swift */; };
 		1D9AD4422AAB1D6900A4481E /* HotelMainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AD4412AAB1D6900A4481E /* HotelMainInfo.swift */; };
 		1D9AD4462AAB201800A4481E /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AD4452AAB201800A4481E /* UIViewController + Extension.swift */; };
@@ -28,6 +33,10 @@
 		1D910DC42AB18114001EF789 /* AboutHotelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutHotelTableViewCell.swift; sourceTree = "<group>"; };
 		1D910DC72AB182C5001EF789 /* AboutHotelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutHotelModel.swift; sourceTree = "<group>"; };
 		1D910DC92AB18844001EF789 /* HotelButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelButtonView.swift; sourceTree = "<group>"; };
+		1D910DCC2AB24434001EF789 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		1D910DCE2AB2447C001EF789 /* HotelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelModel.swift; sourceTree = "<group>"; };
+		1D910DD12AB244D6001EF789 /* HotelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelViewModel.swift; sourceTree = "<group>"; };
+		1D910DD52AB248D5001EF789 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
 		1D9AD43F2AAB1D0800A4481E /* DynamicScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicScrollView.swift; sourceTree = "<group>"; };
 		1D9AD4412AAB1D6900A4481E /* HotelMainInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelMainInfo.swift; sourceTree = "<group>"; };
 		1D9AD4452AAB201800A4481E /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
@@ -45,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D910DD92AB248EB001EF789 /* Kingfisher in Frameworks */,
 				1DF002982AAB245D00A31A1A /* SnapKit in Frameworks */,
 				1D8B116F2AAF203D007FE9A0 /* DesignSystem in Frameworks */,
 			);
@@ -64,8 +74,42 @@
 			isa = PBXGroup;
 			children = (
 				1D910DC72AB182C5001EF789 /* AboutHotelModel.swift */,
+				1D910DCE2AB2447C001EF789 /* HotelModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1D910DCB2AB2441E001EF789 /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				1D910DCC2AB24434001EF789 /* NetworkService.swift */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		1D910DD02AB244C6001EF789 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1D910DD12AB244D6001EF789 /* HotelViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1D910DD32AB248BB001EF789 /* Core Layer */ = {
+			isa = PBXGroup;
+			children = (
+				1D910DD42AB248C3001EF789 /* Extensions */,
+				1D910DCB2AB2441E001EF789 /* Network Layer */,
+			);
+			path = "Core Layer";
+			sourceTree = "<group>";
+		};
+		1D910DD42AB248C3001EF789 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1D910DD52AB248D5001EF789 /* UIImageView + Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		1D9AD43C2AAB15A600A4481E /* View */ = {
@@ -117,6 +161,7 @@
 		1DCE8EA22AAB0CAD00CD5D6E /* hotelCalifornia */ = {
 			isa = PBXGroup;
 			children = (
+				1D910DD32AB248BB001EF789 /* Core Layer */,
 				1DCE8EB82AAB13D000CD5D6E /* Application layer */,
 				1DCE8EB72AAB13C300CD5D6E /* Modules */,
 				1DCE8EB92AAB13E100CD5D6E /* Resources */,
@@ -157,6 +202,7 @@
 			children = (
 				1D910DC62AB182B4001EF789 /* Model */,
 				1D9AD43C2AAB15A600A4481E /* View */,
+				1D910DD02AB244C6001EF789 /* ViewModel */,
 			);
 			path = Hotel;
 			sourceTree = "<group>";
@@ -188,6 +234,7 @@
 			packageProductDependencies = (
 				1DF002972AAB245D00A31A1A /* SnapKit */,
 				1D8B116E2AAF203D007FE9A0 /* DesignSystem */,
+				1D910DD82AB248EB001EF789 /* Kingfisher */,
 			);
 			productName = hotelCalifornia;
 			productReference = 1DCE8EA02AAB0CAD00CD5D6E /* hotelCalifornia.app */;
@@ -219,6 +266,7 @@
 			mainGroup = 1DCE8E972AAB0CAD00CD5D6E;
 			packageReferences = (
 				1DF002962AAB245D00A31A1A /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1D910DD72AB248EB001EF789 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 1DCE8EA12AAB0CAD00CD5D6E /* Products */;
 			projectDirPath = "";
@@ -246,15 +294,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D910DCD2AB24434001EF789 /* NetworkService.swift in Sources */,
 				1D9AD4402AAB1D0800A4481E /* DynamicScrollView.swift in Sources */,
+				1D910DD62AB248D5001EF789 /* UIImageView + Extension.swift in Sources */,
 				1D9AD4462AAB201800A4481E /* UIViewController + Extension.swift in Sources */,
 				1D910DC82AB182C5001EF789 /* AboutHotelModel.swift in Sources */,
+				1D910DCF2AB2447C001EF789 /* HotelModel.swift in Sources */,
 				1D9AD4482AAB203800A4481E /* UIView + Extension.swift in Sources */,
 				1DCE8EBC2AAB13F800CD5D6E /* HotelViewController.swift in Sources */,
 				1D8B11712AAF4CD9007FE9A0 /* HotelAdditionalInfo.swift in Sources */,
 				1DCE8EA42AAB0CAD00CD5D6E /* AppDelegate.swift in Sources */,
 				1D910DCA2AB18844001EF789 /* HotelButtonView.swift in Sources */,
 				1D910DC52AB18114001EF789 /* AboutHotelTableViewCell.swift in Sources */,
+				1D910DD22AB244D6001EF789 /* HotelViewModel.swift in Sources */,
 				1D9AD4422AAB1D6900A4481E /* HotelMainInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +517,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1D910DD72AB248EB001EF789 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		1DF002962AAB245D00A31A1A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -479,6 +539,11 @@
 		1D8B116E2AAF203D007FE9A0 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DesignSystem;
+		};
+		1D910DD82AB248EB001EF789 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D910DD72AB248EB001EF789 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		1DF002972AAB245D00A31A1A /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

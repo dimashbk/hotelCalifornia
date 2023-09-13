@@ -10,6 +10,7 @@ import DesignSystem
 
 final class HotelViewController: UIViewController {
     
+    let viewModel = HotelViewModel()
     let mainInfo = HotelMainInfo()
     let additionalInfo = HotelAdditionalInfo()
     let buttonView = HotelButtonView()
@@ -29,6 +30,8 @@ final class HotelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        viewModel.getHotelInfo()
+      
     }
     
     private func setup() {
@@ -36,6 +39,7 @@ final class HotelViewController: UIViewController {
         scrollView.backgroundColor = .secondarySystemBackground
         setupSubviews()
         setupConstraints()
+        bindViewModel()
     }
     
     private func setupSubviews() {
@@ -48,6 +52,12 @@ final class HotelViewController: UIViewController {
         scrollView.snp.makeConstraints { make in
             make.top.bottom.equalTo(view.safeAreaLayoutGuide)
             make.left.right.equalToSuperview()
+        }
+    }
+    
+    private func bindViewModel() {
+        viewModel.updateViewData = {
+            self.mainInfo.imageSlider.configure(images: self.viewModel.getImages())
         }
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 public class ImageSlider: UIView {
     
     var currentCellIndex = 0
-    var images = [String]()
+    var images = [UIImage]()
     
     private var imagesCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -78,9 +78,13 @@ public class ImageSlider: UIView {
         addGestureRecognizer(leftSwipe)
     }
     
-    public func configure(images: [String]) {
-        self.images = images
-        pageControl.numberOfPages = images.count
+    public func configure(images: [UIImage]?) {
+        guard let images = images else { return }
+        DispatchQueue.main.async {
+            self.images = images
+            self.pageControl.numberOfPages = images.count
+            self.imagesCollectionView.reloadData()
+        }
     }
 
     @objc
@@ -102,11 +106,12 @@ public class ImageSlider: UIView {
 
 extension ImageSlider: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        images.count
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell else { return UICollectionViewCell() }
+        cell.configure(image: images[indexPath.row])
         return cell
     }
     
