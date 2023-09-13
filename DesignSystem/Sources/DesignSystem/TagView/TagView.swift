@@ -8,15 +8,15 @@
 
 import UIKit
 
-final class TagCollectionView: UICollectionView {
+final public class TagCollectionView: UICollectionView {
 
-    init() {
+    public init() {
         let layout = LeftAlignedCollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         layout.minimumInteritemSpacing = 8
         layout.minimumLineSpacing = 10
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         super.init(frame: .zero, collectionViewLayout: layout)
 
         allowsMultipleSelection = true
@@ -29,14 +29,14 @@ final class TagCollectionView: UICollectionView {
         nil
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         if !__CGSizeEqualToSize(bounds.size,self.intrinsicContentSize){
              self.invalidateIntrinsicContentSize()
            }
     }
     
-    override var intrinsicContentSize: CGSize {
+    public override var intrinsicContentSize: CGSize {
         return contentSize
     }
 }
