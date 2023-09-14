@@ -26,7 +26,6 @@ final class HotelAdditionalInfo: UIView {
     private var infoLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        label.text = "Отель VIP-класса с собственными гольф полями. Высокий уровнь сервиса. Рекомендуем для респектабельного отдыха. Отель принимает гостей от 18 лет!"
         label.numberOfLines = 0
         return label
     }()
@@ -40,10 +39,7 @@ final class HotelAdditionalInfo: UIView {
         return tableView
     }()
     
-    var tags = ["Бесплатный Wifi на всей территории отеля",
-                "1 км до пляжа",
-                "Бесплатный фитнес-клуб",
-                "20 км до аэропорта"]
+    var tags = [String]()
     
     private let tagView: TagCollectionView = TagCollectionView()
     
@@ -89,6 +85,14 @@ final class HotelAdditionalInfo: UIView {
             make.left.right.equalToSuperview()
             make.height.equalTo(200)
             make.bottom.equalToSuperview().inset(16)
+        }
+    }
+    
+    public func configure(configuration: HotelModel) {
+        DispatchQueue.main.async {
+            self.infoLabel.text = configuration.aboutTheHotel.description
+            self.tags = configuration.aboutTheHotel.peculiarities
+            self.tagView.reloadData()
         }
     }
 }

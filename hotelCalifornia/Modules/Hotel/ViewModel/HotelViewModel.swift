@@ -12,6 +12,7 @@ final class HotelViewModel {
     
     var hotelInfo: HotelModel?
     var updateViewData: (() -> ())?
+    var coordinatorDelegate: HotelCoordinatorProtocol?
     
     func getHotelInfo() {
         guard let url = URL(string: "https://run.mocky.io/v3/35e0d18e-2521-4f1b-a575-f0fe366f66e3") else { return }
@@ -25,16 +26,5 @@ final class HotelViewModel {
                 print("not that good 667: \(error.localizedDescription)")
             }
         }
-    }
-    
-    func getImages() -> [UIImage] {
-        var images = [UIImage]()
-        
-        for i in hotelInfo!.imageUrls {
-            let url = URL(string: i)
-                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check /
-                    images.append(UIImage(data: data!)!)
-        }
-        return images
     }
 }

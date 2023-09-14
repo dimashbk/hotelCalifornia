@@ -12,7 +12,7 @@ final class HotelButtonView: UIView {
     
     private var button = DSButton(height: .M,
                                   colorType: .primary,
-                                  titleText: "yessir")
+                                  titleText: "К выбору номера")
     
     override init(frame: CGRect) {
         super.init(frame: frame)

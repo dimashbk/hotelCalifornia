@@ -11,7 +11,7 @@ final class ImageCollectionViewCell: UICollectionViewCell {
     
     private var hotelImageView: UIImageView = {
         let image = UIImageView()
-        image.backgroundColor = .brown
+        image.backgroundColor = Color.mainBlue
         return image
     }()
     
@@ -39,8 +39,8 @@ final class ImageCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    public func configure(image: UIImage) {
-        hotelImageView.image = image
+    public func configure(image: String) {
+        hotelImageView.setImage(imageUrl: image)
     }
 
 }

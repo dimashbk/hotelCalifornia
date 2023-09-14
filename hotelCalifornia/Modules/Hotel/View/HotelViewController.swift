@@ -10,7 +10,7 @@ import DesignSystem
 
 final class HotelViewController: UIViewController {
     
-    let viewModel = HotelViewModel()
+    var viewModel: HotelViewModel?
     let mainInfo = HotelMainInfo()
     let additionalInfo = HotelAdditionalInfo()
     let buttonView = HotelButtonView()
@@ -30,8 +30,7 @@ final class HotelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        viewModel.getHotelInfo()
-      
+        viewModel?.getHotelInfo()
     }
     
     private func setup() {
@@ -56,8 +55,10 @@ final class HotelViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        viewModel.updateViewData = {
-            self.mainInfo.imageSlider.configure(images: self.viewModel.getImages())
+        viewModel?.updateViewData = {
+            guard let hotelInfo = self.viewModel?.hotelInfo else { return }
+            self.mainInfo.configure(configuration: hotelInfo)
+            self.additionalInfo.configure(configuration: hotelInfo)
         }
     }
 }

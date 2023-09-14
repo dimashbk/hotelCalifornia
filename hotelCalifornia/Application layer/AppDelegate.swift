@@ -11,16 +11,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private var appCoordinate: AppCoordinator?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // MARK: - Window setup
-        
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: HotelViewController())
-        window?.makeKeyAndVisible()
-        window?.backgroundColor = .white
+        setCoordinator()
         
         return true
+    }
+    
+    private func setCoordinator() {
+        appCoordinate = AppCoordinator(window: window!)
+        appCoordinate?.start()
     }
 
 }

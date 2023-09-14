@@ -11,12 +11,13 @@ import DesignSystem
 
 final class HotelMainInfo: UIView {
     
-    var imageSlider = ImageSlider()
+    private var imageSlider = ImageSlider()
     private var ratingView = HotelRatingView()
     
     private var hotelName: UILabel = {
         let label = UILabel()
         label.text = "Steigenberger Makadi"
+        label.numberOfLines = 0
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 22, weight: .medium)
         return label
@@ -25,15 +26,25 @@ final class HotelMainInfo: UIView {
     private var hotelAddress: UILabel = {
         let label = UILabel()
         label.text = "Madinat Makadi, Safaga Road, Makadi Bay, Египет"
+        label.numberOfLines = 0
         label.textColor = Color.mainBlue
         label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         return label
     }()
+    
     private var hotelPrice: UILabel = {
         let label = UILabel()
-        label.text = "от 134 673 ₽"
+        label.text = "от 134 673 "
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
+        return label
+    }()
+    
+    private var priceForIt: UILabel = {
+        let label = UILabel()
+        label.text = "За тур с перелетом"
+        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         return label
     }()
     
@@ -56,15 +67,12 @@ final class HotelMainInfo: UIView {
     
     private func setupSubviews() {
         [imageSlider, ratingView, hotelName,
-         hotelAddress, hotelPrice].forEach {
+         hotelAddress, hotelPrice, priceForIt].forEach {
             addSubview($0)
         }
     }
     
     private func setupConstraints() {
-        snp.makeConstraints { make in
-            make.height.equalTo(432)
-        }
         imageSlider.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.left.right.equalToSuperview().inset(16)
@@ -75,16 +83,31 @@ final class HotelMainInfo: UIView {
             make.top.equalTo(imageSlider.snp.bottom).offset(16)
         }
         hotelName.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(16)
+            make.left.right.equalToSuperview().inset(16)
             make.top.equalTo(ratingView.snp.bottom).offset(8)
         }
         hotelAddress.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(16)
+            make.left.right.equalToSuperview().inset(16)
             make.top.equalTo(hotelName.snp.bottom).offset(8)
         }
         hotelPrice.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(16)
             make.top.equalTo(hotelAddress.snp.bottom).offset(16)
+        }
+        priceForIt.snp.makeConstraints { make in
+            make.left.equalTo(hotelPrice.snp.right).offset(8)
+            make.bottom.equalTo(hotelPrice).inset(4)
+            make.bottom.equalToSuperview().inset(16)
+        }
+    }
+    
+    public func configure(configuration: HotelModel) {
+        DispatchQueue.main.async {
+            self.imageSlider.configure(images: configuration.imageUrls)
+            self.hotelName.text = configuration.name
+            self.hotelAddress.text = configuration.adress
+            self.hotelPrice.text = "от \(configuration.minimalPrice) ₽"
+            self.priceForIt.text = configuration.priceForIt
         }
     }
 }

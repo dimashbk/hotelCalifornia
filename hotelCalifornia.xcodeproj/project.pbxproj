@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D6E62C62AB2D1D900AAD9BD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6E62C52AB2D1D900AAD9BD /* Kingfisher */; };
+		1D6E62C92AB2D82A00AAD9BD /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E62C82AB2D82A00AAD9BD /* BaseCoordinator.swift */; };
+		1D6E62CC2AB2D86500AAD9BD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E62CB2AB2D86500AAD9BD /* Coordinator.swift */; };
+		1D6E62CF2AB2F82400AAD9BD /* HotelCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E62CE2AB2F82400AAD9BD /* HotelCoordinator.swift */; };
+		1D6E62D22AB2FA8200AAD9BD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6E62D12AB2FA8200AAD9BD /* AppCoordinator.swift */; };
 		1D8B116F2AAF203D007FE9A0 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 1D8B116E2AAF203D007FE9A0 /* DesignSystem */; };
 		1D8B11712AAF4CD9007FE9A0 /* HotelAdditionalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8B11702AAF4CD9007FE9A0 /* HotelAdditionalInfo.swift */; };
 		1D910DC52AB18114001EF789 /* AboutHotelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D910DC42AB18114001EF789 /* AboutHotelTableViewCell.swift */; };
@@ -16,7 +21,6 @@
 		1D910DCF2AB2447C001EF789 /* HotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D910DCE2AB2447C001EF789 /* HotelModel.swift */; };
 		1D910DD22AB244D6001EF789 /* HotelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D910DD12AB244D6001EF789 /* HotelViewModel.swift */; };
 		1D910DD62AB248D5001EF789 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D910DD52AB248D5001EF789 /* UIImageView + Extension.swift */; };
-		1D910DD92AB248EB001EF789 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1D910DD82AB248EB001EF789 /* Kingfisher */; };
 		1D9AD4402AAB1D0800A4481E /* DynamicScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AD43F2AAB1D0800A4481E /* DynamicScrollView.swift */; };
 		1D9AD4422AAB1D6900A4481E /* HotelMainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AD4412AAB1D6900A4481E /* HotelMainInfo.swift */; };
 		1D9AD4462AAB201800A4481E /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AD4452AAB201800A4481E /* UIViewController + Extension.swift */; };
@@ -29,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D6E62C82AB2D82A00AAD9BD /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		1D6E62CB2AB2D86500AAD9BD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		1D6E62CE2AB2F82400AAD9BD /* HotelCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelCoordinator.swift; sourceTree = "<group>"; };
+		1D6E62D12AB2FA8200AAD9BD /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		1D8B11702AAF4CD9007FE9A0 /* HotelAdditionalInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelAdditionalInfo.swift; sourceTree = "<group>"; };
 		1D910DC42AB18114001EF789 /* AboutHotelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutHotelTableViewCell.swift; sourceTree = "<group>"; };
 		1D910DC72AB182C5001EF789 /* AboutHotelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutHotelModel.swift; sourceTree = "<group>"; };
@@ -54,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D910DD92AB248EB001EF789 /* Kingfisher in Frameworks */,
+				1D6E62C62AB2D1D900AAD9BD /* Kingfisher in Frameworks */,
 				1DF002982AAB245D00A31A1A /* SnapKit in Frameworks */,
 				1D8B116F2AAF203D007FE9A0 /* DesignSystem in Frameworks */,
 			);
@@ -68,6 +76,38 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D6E62C72AB2D81400AAD9BD /* Base Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1D6E62C82AB2D82A00AAD9BD /* BaseCoordinator.swift */,
+			);
+			path = "Base Coordinator";
+			sourceTree = "<group>";
+		};
+		1D6E62CA2AB2D85500AAD9BD /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1D6E62CB2AB2D86500AAD9BD /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1D6E62CD2AB2F81400AAD9BD /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1D6E62CE2AB2F82400AAD9BD /* HotelCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1D6E62D02AB2FA6F00AAD9BD /* App Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1D6E62D12AB2FA8200AAD9BD /* AppCoordinator.swift */,
+			);
+			path = "App Coordinator";
 			sourceTree = "<group>";
 		};
 		1D910DC62AB182B4001EF789 /* Model */ = {
@@ -181,6 +221,9 @@
 		1DCE8EB82AAB13D000CD5D6E /* Application layer */ = {
 			isa = PBXGroup;
 			children = (
+				1D6E62D02AB2FA6F00AAD9BD /* App Coordinator */,
+				1D6E62CA2AB2D85500AAD9BD /* Coordinator */,
+				1D6E62C72AB2D81400AAD9BD /* Base Coordinator */,
 				1DCE8EA32AAB0CAD00CD5D6E /* AppDelegate.swift */,
 				1DCE8EAE2AAB0CAE00CD5D6E /* LaunchScreen.storyboard */,
 			);
@@ -200,6 +243,7 @@
 		1DCE8EBA2AAB13EB00CD5D6E /* Hotel */ = {
 			isa = PBXGroup;
 			children = (
+				1D6E62CD2AB2F81400AAD9BD /* Coordinator */,
 				1D910DC62AB182B4001EF789 /* Model */,
 				1D9AD43C2AAB15A600A4481E /* View */,
 				1D910DD02AB244C6001EF789 /* ViewModel */,
@@ -234,7 +278,7 @@
 			packageProductDependencies = (
 				1DF002972AAB245D00A31A1A /* SnapKit */,
 				1D8B116E2AAF203D007FE9A0 /* DesignSystem */,
-				1D910DD82AB248EB001EF789 /* Kingfisher */,
+				1D6E62C52AB2D1D900AAD9BD /* Kingfisher */,
 			);
 			productName = hotelCalifornia;
 			productReference = 1DCE8EA02AAB0CAD00CD5D6E /* hotelCalifornia.app */;
@@ -294,16 +338,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D6E62CC2AB2D86500AAD9BD /* Coordinator.swift in Sources */,
 				1D910DCD2AB24434001EF789 /* NetworkService.swift in Sources */,
 				1D9AD4402AAB1D0800A4481E /* DynamicScrollView.swift in Sources */,
 				1D910DD62AB248D5001EF789 /* UIImageView + Extension.swift in Sources */,
 				1D9AD4462AAB201800A4481E /* UIViewController + Extension.swift in Sources */,
 				1D910DC82AB182C5001EF789 /* AboutHotelModel.swift in Sources */,
+				1D6E62D22AB2FA8200AAD9BD /* AppCoordinator.swift in Sources */,
 				1D910DCF2AB2447C001EF789 /* HotelModel.swift in Sources */,
 				1D9AD4482AAB203800A4481E /* UIView + Extension.swift in Sources */,
 				1DCE8EBC2AAB13F800CD5D6E /* HotelViewController.swift in Sources */,
 				1D8B11712AAF4CD9007FE9A0 /* HotelAdditionalInfo.swift in Sources */,
 				1DCE8EA42AAB0CAD00CD5D6E /* AppDelegate.swift in Sources */,
+				1D6E62CF2AB2F82400AAD9BD /* HotelCoordinator.swift in Sources */,
+				1D6E62C92AB2D82A00AAD9BD /* BaseCoordinator.swift in Sources */,
 				1D910DCA2AB18844001EF789 /* HotelButtonView.swift in Sources */,
 				1D910DC52AB18114001EF789 /* AboutHotelTableViewCell.swift in Sources */,
 				1D910DD22AB244D6001EF789 /* HotelViewModel.swift in Sources */,
@@ -536,14 +584,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1D8B116E2AAF203D007FE9A0 /* DesignSystem */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DesignSystem;
-		};
-		1D910DD82AB248EB001EF789 /* Kingfisher */ = {
+		1D6E62C52AB2D1D900AAD9BD /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1D910DD72AB248EB001EF789 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		1D8B116E2AAF203D007FE9A0 /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
 		};
 		1DF002972AAB245D00A31A1A /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

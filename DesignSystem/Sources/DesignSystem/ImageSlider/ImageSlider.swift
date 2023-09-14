@@ -10,7 +10,7 @@ import UIKit
 public class ImageSlider: UIView {
     
     var currentCellIndex = 0
-    var images = [UIImage]()
+    var images = [String]()
     
     private var imagesCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -78,7 +78,7 @@ public class ImageSlider: UIView {
         addGestureRecognizer(leftSwipe)
     }
     
-    public func configure(images: [UIImage]?) {
+    public func configure(images: [String]?) {
         guard let images = images else { return }
         DispatchQueue.main.async {
             self.images = images

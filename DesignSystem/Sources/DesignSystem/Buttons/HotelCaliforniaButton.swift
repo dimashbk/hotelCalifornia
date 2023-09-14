@@ -113,7 +113,7 @@ open class HotelCaliforniaButton: UIControl, ConfigurableButton {
         self.snp.makeConstraints { make in
             make.height.equalTo(height.rawValue)
         }
-        layer.cornerRadius = 8
+        layer.cornerRadius = 15
     }
     
     override open var intrinsicContentSize: CGSize {
