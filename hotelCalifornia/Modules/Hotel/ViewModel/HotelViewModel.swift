@@ -27,4 +27,8 @@ final class HotelViewModel {
             }
         }
     }
+    
+    func navigateToNumbersFlow() {
+        coordinatorDelegate?.showNumberFlow()
+    }
 }

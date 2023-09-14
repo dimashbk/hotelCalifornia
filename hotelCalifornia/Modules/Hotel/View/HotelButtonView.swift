@@ -10,7 +10,7 @@ import DesignSystem
 
 final class HotelButtonView: UIView {
     
-    private var button = DSButton(height: .M,
+    public var button = DSButton(height: .M,
                                   colorType: .primary,
                                   titleText: "К выбору номера")
     

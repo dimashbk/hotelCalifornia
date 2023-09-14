@@ -27,10 +27,14 @@ final class HotelViewController: UIViewController {
         return view
     }()
 
+    override func loadView() {
+        super.loadView()
+        viewModel?.getHotelInfo()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        viewModel?.getHotelInfo()
     }
     
     private func setup() {
@@ -38,6 +42,7 @@ final class HotelViewController: UIViewController {
         scrollView.backgroundColor = .secondarySystemBackground
         setupSubviews()
         setupConstraints()
+        setupButton()
         bindViewModel()
     }
     
@@ -54,6 +59,10 @@ final class HotelViewController: UIViewController {
         }
     }
     
+    private func setupButton() {
+        buttonView.button.addTarget(self, action: #selector(moveToNumbers), for: .touchUpInside)
+    }
+    
     private func bindViewModel() {
         viewModel?.updateViewData = {
             guard let hotelInfo = self.viewModel?.hotelInfo else { return }
@@ -61,6 +70,12 @@ final class HotelViewController: UIViewController {
             self.additionalInfo.configure(configuration: hotelInfo)
         }
     }
+    
+    @objc func moveToNumbers() {
+        viewModel?.navigateToNumbersFlow()
+    }
+    
+    
 }
 
 

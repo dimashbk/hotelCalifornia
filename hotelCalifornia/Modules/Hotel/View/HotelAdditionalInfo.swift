@@ -11,6 +11,8 @@ import DesignSystem
 
 final class HotelAdditionalInfo: UIView {
     
+    var tags = [String]()
+    
     var aboutHotelSettings: [AboutHotelSettingsRow] = [
         .init(rowType: .convinience, leftImage: .init(named: "convinience")),
         .init(rowType: .whatIncluded, leftImage: .init(named: "included")),
@@ -38,8 +40,6 @@ final class HotelAdditionalInfo: UIView {
         tableView.register(AboutHotelTableViewCell.self, forCellReuseIdentifier: "AboutHotelTableViewCell")
         return tableView
     }()
-    
-    var tags = [String]()
     
     private let tagView: TagCollectionView = TagCollectionView()
     

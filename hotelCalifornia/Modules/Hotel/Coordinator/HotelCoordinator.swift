@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 import UIKit
 
 protocol NumberFlow {
@@ -26,15 +25,16 @@ final class HotelCoordinator: BaseCoordinator{
     
     override func start() {
         let viewModel = HotelViewModel()
-        let profileVC = HotelViewController()
-        profileVC.viewModel = viewModel
-        profileVC.viewModel?.coordinatorDelegate = self
-        navigationController.pushViewController(profileVC, animated: true)
+        let hotelVC = HotelViewController()
+        hotelVC.viewModel = viewModel
+        hotelVC.viewModel?.coordinatorDelegate = self
+        navigationController.pushViewController(hotelVC, animated: true)
     }
 }
 
 extension HotelCoordinator: HotelCoordinatorProtocol {
     func showNumberFlow() {
-        print("number")
+        let numbersCoordinator = NumbersCoordinator(navigationController: navigationController)
+        coordinate(to: numbersCoordinator)
     }
 }
