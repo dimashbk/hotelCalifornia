@@ -16,7 +16,6 @@ final class HotelMainInfo: UIView {
     
     private var hotelName: UILabel = {
         let label = UILabel()
-        label.text = "Steigenberger Makadi"
         label.numberOfLines = 0
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 22, weight: .medium)
@@ -25,7 +24,6 @@ final class HotelMainInfo: UIView {
     
     private var hotelAddress: UILabel = {
         let label = UILabel()
-        label.text = "Madinat Makadi, Safaga Road, Makadi Bay, Египет"
         label.numberOfLines = 0
         label.textColor = Color.mainBlue
         label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
@@ -34,7 +32,6 @@ final class HotelMainInfo: UIView {
     
     private var hotelPrice: UILabel = {
         let label = UILabel()
-        label.text = "от 134 673 "
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
         return label
@@ -42,7 +39,6 @@ final class HotelMainInfo: UIView {
     
     private var priceForIt: UILabel = {
         let label = UILabel()
-        label.text = "За тур с перелетом"
         label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         return label

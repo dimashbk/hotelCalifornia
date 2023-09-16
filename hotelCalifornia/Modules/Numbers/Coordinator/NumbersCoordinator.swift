@@ -33,6 +33,7 @@ final class NumbersCoordinator: BaseCoordinator {
 
 extension NumbersCoordinator: NumbersCoordinatorProtocol {
     func showPaymentFlow() {
-        print("Payments")
+        let paymentCoordinator = PaymentCoordinator(navigationController: navigationController)
+        coordinate(to: paymentCoordinator)
     }
 }

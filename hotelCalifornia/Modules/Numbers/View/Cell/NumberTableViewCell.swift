@@ -11,6 +11,7 @@ import DesignSystem
 final class NumberTableViewCell: UITableViewCell {
     
     var tags = [String]()
+    var onTap: (() -> ())?
     private var imageSlider = ImageSlider()
     private var tagView = TagCollectionView()
     private var aboutHotel = AboutHotelView()
@@ -59,6 +60,7 @@ final class NumberTableViewCell: UITableViewCell {
     private func setup() {
         tagView.dataSource = self
         contentView.backgroundColor = .secondarySystemBackground
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         aboutHotel.configure(titleText: "Подробнее о номере")
         setupSubviews()
         setupConstraints()
@@ -118,6 +120,10 @@ final class NumberTableViewCell: UITableViewCell {
             self.priceLabel.text = "от \(configuration.price) ₽"
             self.priceForIt.text = configuration.pricePer
         }
+    }
+    
+    @objc func buttonTapped() {
+        onTap?()
     }
 }
 

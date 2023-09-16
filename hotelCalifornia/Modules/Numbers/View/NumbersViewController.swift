@@ -68,6 +68,10 @@ extension NumbersViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.configure(configuration: (viewModel?.rooms[indexPath.row])!)
         
+        cell.onTap = { [weak self] in
+            self?.viewModel?.navigateToPaymentFlow()
+        }
+        
         return cell
         }
     }

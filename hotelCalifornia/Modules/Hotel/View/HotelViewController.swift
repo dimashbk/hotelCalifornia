@@ -11,12 +11,12 @@ import DesignSystem
 final class HotelViewController: UIViewController {
     
     var viewModel: HotelViewModel?
-    let mainInfo = HotelMainInfo()
-    let additionalInfo = HotelAdditionalInfo()
-    let buttonView = HotelButtonView()
-    lazy var scrollView = DynamicHeightScrollView(contentView: contentView)
+    private let mainInfo = HotelMainInfo()
+    private let additionalInfo = HotelAdditionalInfo()
+    private let buttonView = HotelButtonView()
+    private lazy var scrollView = DynamicHeightScrollView(contentView: contentView)
     
-    lazy var contentView: UIStackView = {
+    private lazy var contentView: UIStackView = {
         let view = UIStackView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.addArrangedSubview(mainInfo)
@@ -74,8 +74,6 @@ final class HotelViewController: UIViewController {
     @objc func moveToNumbers() {
         viewModel?.navigateToNumbersFlow()
     }
-    
-    
 }
 
 

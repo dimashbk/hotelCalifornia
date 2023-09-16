@@ -27,4 +27,8 @@ final class NumbersViewModel {
         }
     }
     
+    func navigateToPaymentFlow() {
+        coordinatorDelegate?.showPaymentFlow()
+    }
+    
 }
