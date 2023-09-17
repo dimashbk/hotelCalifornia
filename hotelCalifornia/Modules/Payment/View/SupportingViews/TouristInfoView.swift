@@ -80,6 +80,7 @@ final class TouristInfoView: UIView {
     private func setup() {
         backgroundColor = .white
         layer.cornerRadius = 12
+        layer.masksToBounds = true
         setupSubviews()
         setupConstraints()
     }

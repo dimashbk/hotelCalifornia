@@ -64,6 +64,7 @@ final class PaymentViewController: UIViewController {
         viewModel?.updateViewData = { [weak self] in
             guard let configuration = self?.viewModel?.paymentModel else { return }
             self?.detailView.configure(configuration: configuration)
+            self?.tourPriceView.configure(configuration: configuration)
         }
     }
 }

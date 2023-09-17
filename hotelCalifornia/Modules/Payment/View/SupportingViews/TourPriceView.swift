@@ -8,6 +8,11 @@
 import UIKit
 
 final class TourPriceView: UIView {
+    
+    private var tourView = TourPriceAdditionalView()
+    private var fuelFeeView = TourPriceAdditionalView()
+    private var serviceFeeView = TourPriceAdditionalView()
+    private var totalPriceView = TourPriceAdditionalView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,23 +24,48 @@ final class TourPriceView: UIView {
     }
     
     private func setup() {
+        backgroundColor = .white
+        layer.cornerRadius = 12
         setupSubviews()
         setupConstraints()
     }
     
     private func setupSubviews() {
-        backgroundColor = .white
-        layer.cornerRadius = 12
+        [tourView, fuelFeeView, serviceFeeView,
+         totalPriceView].forEach {
+            addSubview($0)
+        }
     }
     
     private func setupConstraints() {
-        snp.makeConstraints { make in
-            make.height.equalTo(70)
+        tourView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(8)
+            make.left.right.equalToSuperview()
+        }
+        fuelFeeView.snp.makeConstraints { make in
+            make.top.equalTo(tourView.snp.bottom)
+            make.left.right.equalToSuperview()
+        }
+        serviceFeeView.snp.makeConstraints { make in
+            make.top.equalTo(fuelFeeView.snp.bottom)
+            make.left.right.equalToSuperview()
+        }
+        totalPriceView.snp.makeConstraints { make in
+            make.top.equalTo(serviceFeeView.snp.bottom)
+            make.left.right.equalToSuperview()
+            make.bottom.equalToSuperview().inset(8)
         }
     }
-
+    
+    public func configure(configuration: PaymentModel) {
+        tourView.configure(infoName: "Тур", info: String(configuration.tourPrice) + " ₽")
+        fuelFeeView.configure(infoName: "Топливный сбор", info: String(configuration.fuelCharge) + " ₽")
+        serviceFeeView.configure(infoName: "Сервисный сбор", info: String(configuration.serviceCharge) + " ₽")
+        totalPriceView.configure(infoName: "К оплате", info: String(configuration.tourPrice +
+                                                            configuration.fuelCharge +
+                                                            configuration.serviceCharge) + " ₽")
+    }
 }
-
 
 final class TourPriceAdditionalView: UIView {
     
