@@ -9,9 +9,9 @@ import Foundation
 
 final class PaymentViewModel {
     
-    var coordinatorDelegate: PaymentCoordinator?
     var updateViewData: (() -> ())?
     var paymentModel: PaymentModel?
+    var coordinatorDelegate: PaymentCoordinator?
 
     func getPaymentInfo() {
         guard let url = URL(string: "https://run.mocky.io/v3/e8868481-743f-4eb2-a0d7-2bc4012275c8") else { return }

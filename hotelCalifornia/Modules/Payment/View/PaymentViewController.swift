@@ -13,6 +13,9 @@ final class PaymentViewController: UIViewController {
     var viewModel: PaymentViewModel?
     private var generalView = GeneralInfoView()
     private var detailView = DetailInfoView()
+    private var buyerInfoView = BuyerInfoView()
+    private var firstTourist = TouristInfoView()
+    private var tourPriceView = TourPriceView()
     private lazy var scrollView = DynamicHeightScrollView(contentView: contentView)
     
     private lazy var contentView: UIStackView = {
@@ -40,14 +43,16 @@ final class PaymentViewController: UIViewController {
         [scrollView].forEach {
             view.addSubview($0)
         }
-        [generalView, detailView].forEach {
+        [generalView, detailView, buyerInfoView,
+         firstTourist, tourPriceView].forEach {
             contentView.addArrangedSubview($0)
         }
     }
     
     private func setupConstraints() {
         scrollView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.right.left.equalToSuperview()
         }
     }
     
