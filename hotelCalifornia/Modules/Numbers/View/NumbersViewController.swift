@@ -49,9 +49,9 @@ final class NumbersViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        viewModel?.updateViewData = {
+        viewModel?.updateViewData = { [weak self] in
             DispatchQueue.main.async {
-                self.numbersTableView.reloadData()
+                self?.numbersTableView.reloadData()
             }
         }
     }

@@ -73,8 +73,8 @@ final class PaymentViewController: UIViewController {
     
     private func setupButton() {
         buttonView.button.setTitle("Оплатить")
-        buttonView.button.onTap = {
-            self.viewModel?.navigateToSuccess()
+        buttonView.button.onTap = { [weak self] in
+            self?.viewModel?.navigateToSuccess()
         }
     }
 }
