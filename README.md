@@ -7,6 +7,7 @@
 + UIKit - UI of app
 + URLSession - To make requests
 + MVVM - Architecture of the app
++ Coordinator as a navigation
 + KingFisher - to get images and set them
 + SnapKit
 + Custom Design System as a Framework with SPM
