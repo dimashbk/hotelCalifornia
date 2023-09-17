@@ -30,8 +30,9 @@ final class PaymentCoordinator: BaseCoordinator {
     }
 }
 
-extension HotelCoordinator: PaymentCoordinatorProtocol {
+extension PaymentCoordinator: PaymentCoordinatorProtocol {
     func showSuccessFlow() {
-        
+        let successCoordinator = SuccessCoordinator(navigationController: navigationController)
+        coordinate(to: successCoordinator)
     }
 }

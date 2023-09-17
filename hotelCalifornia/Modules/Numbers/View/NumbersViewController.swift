@@ -9,7 +9,7 @@ import UIKit
 
 final class NumbersViewController: UIViewController {
     
-    var viewModel: NumbersViewModel?
+    var viewModel: NumbersViewModelProtocol?
     
     lazy var numbersTableView: UITableView = {
         let tableView = UITableView()

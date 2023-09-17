@@ -10,12 +10,14 @@ import DesignSystem
 
 final class PaymentViewController: UIViewController {
     
-    var viewModel: PaymentViewModel?
+    var viewModel: PaymentViewModelProtocol?
     private var generalView = GeneralInfoView()
     private var detailView = DetailInfoView()
     private var buyerInfoView = BuyerInfoView()
     private var firstTourist = TouristInfoView()
+    private var secondTourist = TouristInfoView()
     private var tourPriceView = TourPriceView()
+    private var buttonView = HotelButtonView()
     private lazy var scrollView = DynamicHeightScrollView(contentView: contentView)
     
     private lazy var contentView: UIStackView = {
@@ -36,6 +38,7 @@ final class PaymentViewController: UIViewController {
         setupSubviews()
         setupConstraints()
         setupScrollView()
+        setupButton()
         bindViewModel()
     }
     
@@ -44,7 +47,7 @@ final class PaymentViewController: UIViewController {
             view.addSubview($0)
         }
         [generalView, detailView, buyerInfoView,
-         firstTourist, tourPriceView].forEach {
+         firstTourist, secondTourist, tourPriceView, buttonView].forEach {
             contentView.addArrangedSubview($0)
         }
     }
@@ -65,6 +68,13 @@ final class PaymentViewController: UIViewController {
             guard let configuration = self?.viewModel?.paymentModel else { return }
             self?.detailView.configure(configuration: configuration)
             self?.tourPriceView.configure(configuration: configuration)
+        }
+    }
+    
+    private func setupButton() {
+        buttonView.button.setTitle("Оплатить")
+        buttonView.button.onTap = {
+            self.viewModel?.navigateToSuccess()
         }
     }
 }

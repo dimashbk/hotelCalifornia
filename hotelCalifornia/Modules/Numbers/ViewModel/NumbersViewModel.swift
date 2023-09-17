@@ -7,7 +7,20 @@
 
 import Foundation
 
-final class NumbersViewModel {
+protocol NumbersNetworking {
+    func getNumbers()
+    var updateViewData: (() -> ())? { get set }
+    var rooms: [Room] { get set }
+}
+
+protocol NumbersNavigation {
+    func navigateToPaymentFlow()
+    var coordinatorDelegate: NumbersCoordinatorProtocol? { get set }
+}
+
+typealias NumbersViewModelProtocol = NumbersNetworking & NumbersNavigation
+
+final class NumbersViewModel: NumbersViewModelProtocol{
     
     var rooms = [Room]()
     var updateViewData: (() -> ())?

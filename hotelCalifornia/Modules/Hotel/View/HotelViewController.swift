@@ -10,7 +10,7 @@ import DesignSystem
 
 final class HotelViewController: UIViewController {
     
-    var viewModel: HotelViewModel?
+    var viewModel: HotelViewModelProtocol?
     private let mainInfo = HotelMainInfo()
     private let additionalInfo = HotelAdditionalInfo()
     private let buttonView = HotelButtonView()

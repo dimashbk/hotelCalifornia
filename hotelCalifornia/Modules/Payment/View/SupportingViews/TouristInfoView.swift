@@ -12,7 +12,7 @@ final class TouristInfoView: UIView {
     
     private var touristLabel: UILabel = {
         let label = UILabel()
-        label.text = "Первый турист"
+        label.text = "Tурист"
         label.font = UIFont.systemFont(ofSize: 22, weight: .medium)
         return label
     }()
@@ -28,21 +28,18 @@ final class TouristInfoView: UIView {
     private var nameTextField: DSTextField = {
         let textField = DSTextField()
         textField.configure(inputConfiguration: .init(placeholder: "Имя"))
-        textField.setPhoneNumberMask()
         return textField
     }()
     
     private var surnameTextField: DSTextField = {
         let textField = DSTextField()
         textField.configure(inputConfiguration: .init(placeholder: "Фамилия"))
-        textField.setPhoneNumberMask()
         return textField
     }()
 
     private var dateOfBirthTextField: DSTextField = {
         let textField = DSTextField()
         textField.configure(inputConfiguration: .init(placeholder: "Дата рождения"))
-        textField.setPhoneNumberMask()
         return textField
     }()
     
@@ -50,21 +47,18 @@ final class TouristInfoView: UIView {
     private var citizenshipTextField: DSTextField = {
         let textField = DSTextField()
         textField.configure(inputConfiguration: .init(placeholder: "Гражданство"))
-        textField.setPhoneNumberMask()
         return textField
     }()
     
     private var passportNumberTextField: DSTextField = {
         let textField = DSTextField()
         textField.configure(inputConfiguration: .init(placeholder: "Номер паспорта"))
-        textField.setPhoneNumberMask()
         return textField
     }()
     
     private var passportDeadlineTextField: DSTextField = {
         let textField = DSTextField()
         textField.configure(inputConfiguration: .init(placeholder: "Срок окончания паспорта"))
-        textField.setPhoneNumberMask()
         return textField
     }()
     
@@ -132,7 +126,6 @@ final class TouristInfoView: UIView {
     
     @objc func changeButtonState() {
         button.isSelected = !button.isSelected
-        
         if button.isSelected {
             UIView.animate(withDuration: 0.3) {
                 self.snp.updateConstraints { make in

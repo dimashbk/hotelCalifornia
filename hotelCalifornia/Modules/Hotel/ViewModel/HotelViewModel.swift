@@ -8,7 +8,20 @@
 import Foundation
 import UIKit
 
-final class HotelViewModel {
+protocol HotelNetworking {
+    func getHotelInfo()
+    var updateViewData: (() -> ())? { get set }
+    var hotelInfo: HotelModel? { get set }
+}
+
+protocol HotelNavigation {
+    func navigateToNumbersFlow()
+    var coordinatorDelegate: HotelCoordinatorProtocol? { get set }
+}
+
+typealias HotelViewModelProtocol = HotelNetworking & HotelNavigation
+
+final class HotelViewModel: HotelViewModelProtocol {
     
     var hotelInfo: HotelModel?
     var updateViewData: (() -> ())?

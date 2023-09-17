@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DesignSystem
 
 final class TourPriceView: UIView {
     
@@ -58,12 +59,13 @@ final class TourPriceView: UIView {
     }
     
     public func configure(configuration: PaymentModel) {
-        tourView.configure(infoName: "Тур", info: String(configuration.tourPrice) + " ₽")
-        fuelFeeView.configure(infoName: "Топливный сбор", info: String(configuration.fuelCharge) + " ₽")
-        serviceFeeView.configure(infoName: "Сервисный сбор", info: String(configuration.serviceCharge) + " ₽")
-        totalPriceView.configure(infoName: "К оплате", info: String(configuration.tourPrice +
-                                                            configuration.fuelCharge +
-                                                            configuration.serviceCharge) + " ₽")
+        tourView.configure(infoName: "Тур", info: String(configuration.tourPrice) + " ₽", color: .black)
+        fuelFeeView.configure(infoName: "Топливный сбор", info: String(configuration.fuelCharge) + " ₽", color: .black)
+        serviceFeeView.configure(infoName: "Сервисный сбор", info: String(configuration.serviceCharge) + " ₽", color: .black)
+        totalPriceView.configure(infoName: "К оплате", info: String(
+            configuration.tourPrice +
+            configuration.fuelCharge +
+            configuration.serviceCharge) + " ₽", color: Color.mainBlue)
     }
 }
 
@@ -79,7 +81,7 @@ final class TourPriceAdditionalView: UIView {
     
     private var infoLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         label.text = "dhdhddmvkdmhdhd"
         label.numberOfLines = 0
         label.textColor = .black
@@ -117,10 +119,11 @@ final class TourPriceAdditionalView: UIView {
         }
     }
     
-    public func configure(infoName: String, info: String) {
+    public func configure(infoName: String, info: String, color: UIColor) {
         DispatchQueue.main.async {
             self.nameLabel.text = infoName
             self.infoLabel.text = info
+            self.infoLabel.textColor = color
         }
     }
 }

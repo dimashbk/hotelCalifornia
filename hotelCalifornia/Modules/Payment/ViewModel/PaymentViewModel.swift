@@ -7,7 +7,20 @@
 
 import Foundation
 
-final class PaymentViewModel {
+protocol PaymentNetworking {
+    func getPaymentInfo()
+    var updateViewData: (() -> ())? { get set }
+    var paymentModel: PaymentModel? { get set }
+}
+
+protocol PaymentNavigation {
+    func navigateToSuccess()
+    var coordinatorDelegate: PaymentCoordinator? { get set }
+}
+
+typealias PaymentViewModelProtocol = PaymentNetworking & PaymentNavigation
+
+final class PaymentViewModel: PaymentViewModelProtocol {
     
     var updateViewData: (() -> ())?
     var paymentModel: PaymentModel?
@@ -25,5 +38,9 @@ final class PaymentViewModel {
                 print("not that good 667: \(error.localizedDescription)")
             }
         }
+    }
+    
+    func navigateToSuccess() {
+        coordinatorDelegate?.showSuccessFlow()
     }
 }
